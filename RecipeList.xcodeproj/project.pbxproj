@@ -18,6 +18,7 @@
 		CFC468F62779814800DD2FBC /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC468F52779814800DD2FBC /* RecipeDetailView.swift */; };
 		CFC46957277AC82B00DD2FBC /* RecipeTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC46956277AC82B00DD2FBC /* RecipeTabView.swift */; };
 		CFC46973277AD4EA00DD2FBC /* RecipeFeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC46972277AD4EA00DD2FBC /* RecipeFeaturedView.swift */; };
+		CFC46976277AF5B400DD2FBC /* Rational.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC46975277AF5B400DD2FBC /* Rational.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		CFC468F52779814800DD2FBC /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		CFC46956277AC82B00DD2FBC /* RecipeTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTabView.swift; sourceTree = "<group>"; };
 		CFC46972277AD4EA00DD2FBC /* RecipeFeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeaturedView.swift; sourceTree = "<group>"; };
+		CFC46975277AF5B400DD2FBC /* Rational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rational.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				CFC468D92779722A00DD2FBC /* RecipeListApp.swift */,
+				CFC46974277AF57F00DD2FBC /* Utilities */,
 				CFC468EB2779726200DD2FBC /* View Models */,
 				CFC468EA2779725B00DD2FBC /* Models */,
 				CFC468E92779725500DD2FBC /* Views */,
@@ -126,6 +129,14 @@
 				CFC468F32779759F00DD2FBC /* DataService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CFC46974277AF57F00DD2FBC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CFC46975277AF5B400DD2FBC /* Rational.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 			files = (
 				CFC468F02779741B00DD2FBC /* Recipe.swift in Sources */,
 				CFC468F62779814800DD2FBC /* RecipeDetailView.swift in Sources */,
+				CFC46976277AF5B400DD2FBC /* Rational.swift in Sources */,
 				CFC468F2277974D100DD2FBC /* RecipeModel.swift in Sources */,
 				CFC468DC2779722A00DD2FBC /* RecipeListView.swift in Sources */,
 				CFC468DA2779722A00DD2FBC /* RecipeListApp.swift in Sources */,
