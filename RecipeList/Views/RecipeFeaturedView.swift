@@ -12,6 +12,7 @@ struct RecipeFeaturedView: View {
     // Reference the view model
     @EnvironmentObject var model:RecipeModel
     @State var isDetailViewShowing = false
+    @State var tabSelectionIndex = 0
     
     var body: some View {
         
@@ -24,7 +25,7 @@ struct RecipeFeaturedView: View {
                 .font(.largeTitle)
             
             GeometryReader { geo in
-                TabView {
+                TabView (selection: $tabSelectionIndex) {
                     
                     // Loop through each recipe
                     ForEach (0..<model.recipes.count) { index in
@@ -55,7 +56,8 @@ struct RecipeFeaturedView: View {
                                     }
                                 }
                             })
-                                .sheet(isPresented: $isDetailViewShowing, content: {
+                            .tag(index)
+                            .sheet(isPresented: $isDetailViewShowing, content: {
                                     // Show the RecipeDetailView
                                     RecipeDetailView(recipe: model.recipes[index])
                                 })
@@ -74,16 +76,28 @@ struct RecipeFeaturedView: View {
             VStack (alignment: .leading, spacing: 10) {
                 Text("Preparation Time")
                     .font(.headline)
-                Text("1 hour")
+                Text(model.recipes[tabSelectionIndex].prepTime)
                 Text("Highlights")
                     .font(.headline)
-                Text("Healthy,Hearty")
+                RecipeHighlights(highlights: model.recipes[tabSelectionIndex].highlights)
             }
             .padding(.vertical)
             
         }
+        .onAppear(perform: {
+            setFeaturedIndex()
+        })
         
     }
+    
+    func setFeaturedIndex () {
+        // Find first index of recipee that is featured
+        var index = model.recipes.firstIndex { (recipe) -> Bool in
+            return recipe.featured
+        }
+        tabSelectionIndex = index ?? 0
+    }
+    
 }
 
 struct RecipeFeaturedView_Previews: PreviewProvider {
